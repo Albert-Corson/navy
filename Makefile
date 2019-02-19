@@ -7,6 +7,7 @@
 
 SRC	=	./src/main.c		\
 		./src/get_boats.c	\
+		./src/free.c		\
 
 OBJ	=	$(SRC:.c=.o)
 

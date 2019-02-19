@@ -19,6 +19,7 @@ SRC	=	./get_char_pos.c	\
 		./my_put_err_nbr.c	\
 		./my_putchar_err.c	\
 		./my_nisnum.c		\
+		./get_line.c		\
 
 OBJ	=	$(SRC:.c=.o)
 

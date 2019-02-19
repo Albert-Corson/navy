@@ -25,5 +25,6 @@ char **my_tablendup(char **table, int lim, int to_malloc);
 unsigned long long my_put_err_nbr(signed long long int nb);
 int my_putchar_err(char c);
 int my_nisnum(char const *str, int lim);
+char *get_line(int fd);
 
 #endif /* !LIB_H_ */
