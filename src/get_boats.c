@@ -81,15 +81,18 @@ boat_t *get_boats(char const *file)
     boat_t *tmp = NULL;
     int i = 0;
     int fd = open(file, O_RDONLY);
-    char *line = NULL;
+    char *line = get_line(fd);
 
-    while (fd >= 0 && i < 4 && i >= 0) {
-        line = get_line(fd);
-        if (my_strlen(line) != 7 || (!tmp && i != 0))
+    while (fd >= 0 && line && i >= 0) {
+        if (my_strlen(line) != 7 || i > 4)
             i = -2;
         tmp = i >= 0 ? add_boat(line, boats) : NULL;
-        boats = tmp ? tmp : boats;
+        if (!tmp)
+            i = -2;
+        else
+            boats = tmp;
         free(line);
+        line = get_line(fd);
         ++i;
     }
     return (err_msg(file, i, fd, boats));
