@@ -10,7 +10,7 @@
 void get_connected(int target)
 {
     my_putstr("my_pid: ");
-    my_put_nbr(getpid());
+    my_putnbr(getpid());
     if (target != 0) {
         my_putstr("\nGOTTA CONNECT\n");
     } else {

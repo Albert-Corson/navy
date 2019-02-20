@@ -8,31 +8,30 @@
 #include "navyseal.h"
 #include <stdio.h>
 
-void show_nodes(boat_t *boats)
+void showbits(unsigned int x);
+
+void showbits(unsigned int x)
 {
-    while (boats) {
-        printf("L = %d | X = %d | Y = %d | Hor = %d\n", boats->length, boats->x, boats->y, boats->hor);
-        boats = boats->next;
+    for(int i = (sizeof(int) * 8) - 1; i >= 0; i--) {
+       (x & (1u << i)) ? my_putchar('1') : my_putchar(' ');
     }
-    printf("NULL\n");
+    my_putchar('\n');
 }
 
 int main(int argc, char const *argv[])
 {
     int rtn = 0;
-    boat_t *boats = NULL;
-    char **map = NULL;
+    char **my_board = NULL;
+    char **his_board = NULL;
     int pid = initial_err_check(argc, argv);
 
-    if (pid < 0)
-        return (84);
-    boats = get_boats(argv[argc - 1]);
-    show_nodes(boats);
-    // map = init_map(boats); Si boats est NULL init_map() devrait retrun NULL
-    if (!map)
-        return (84);
+    RETURN_IF(pid < 0, 84);
+    my_board = parse_file(argv[1]);
+    RETURN_IF(!my_board, my_puterror("Invalid boat positions\n"));
+    his_board = init_board(8);
+    RETURN_IF(!his_board, 84);
     // rtn = game();
-    free_boats(boats);
-    free_table(map);
+    render_navy(my_board, his_board);
+    destroy_board(my_board, 8);
     return (rtn);
 }

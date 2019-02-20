@@ -5,11 +5,12 @@
 ## makefile
 ##
 
-SRC	=	./src/main.c		\
-		./src/get_boats.c	\
-		./src/free.c		\
-		./src/connect.c		\
-		./src/error.c		\
+SRC	=	./src/main.c			\
+		./src/error.c			\
+		./src/signal/connect.c	\
+		./src/board/boardgen.c	\
+		./src/board/parser.c	\
+		./src/board/render.c
 
 OBJ	=	$(SRC:.c=.o)
 

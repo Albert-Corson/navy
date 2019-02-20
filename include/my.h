@@ -28,5 +28,7 @@ int my_nisnum(char const *str, int lim);
 char *get_line(int fd);
 long my_put_nbr(signed long long nb);
 char *get_input(void);
+void my_putnbr(int nb);
+void *my_memset(void *s, int c, size_t n);
 
 #endif /* !LIB_H_ */
