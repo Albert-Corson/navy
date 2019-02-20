@@ -8,6 +8,8 @@
 SRC	=	./src/main.c		\
 		./src/get_boats.c	\
 		./src/free.c		\
+		./src/connect.c		\
+		./src/error.c		\
 
 OBJ	=	$(SRC:.c=.o)
 

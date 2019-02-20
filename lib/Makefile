@@ -20,6 +20,8 @@ SRC	=	./get_char_pos.c	\
 		./my_putchar_err.c	\
 		./my_nisnum.c		\
 		./get_line.c		\
+		./my_put_nbr.c		\
+		./get_input.c		\
 
 OBJ	=	$(SRC:.c=.o)
 

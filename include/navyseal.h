@@ -28,5 +28,7 @@ typedef struct boat {
 void free_boats(boat_t *boats);
 void *free_table(char **table);
 boat_t *get_boats(char const *file);
+void get_connected(int target);
+int initial_err_check(int argc, const char **argv);
 
 #endif /* !NAVYSEAL_H_ */
