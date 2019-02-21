@@ -29,13 +29,13 @@ typedef struct vector {
 /*
 **  SIGNALS
 */
-void get_connected(int target);
 void siginit(void);
 void handler(int sig);
 int send_package(int pid, int bits, int dec);
 int send_bit(int pid, int value);
 int receive_package(int bits);
 int receive_bit(void);
+int init_connection(int his_pid);
 
 /*
 **  ERROR HANDLING
