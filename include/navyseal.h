@@ -36,6 +36,6 @@ void *destroy_board(char **board, int side);
 char **parse_file(char const *filename);
 int read_boat(int fd, char *boat);
 int add_boat(char **board, char *boat);
-vector_t player_attack(void);
+vector_t player_attack(char **his_board);
 
 #endif /* !NAVYSEAL_H_ */

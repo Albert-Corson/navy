@@ -6,9 +6,6 @@
 */
 
 #include "navyseal.h"
-#include <stdio.h>
-
-void showbits(unsigned int x);
 
 void showbits(unsigned int x)
 {
