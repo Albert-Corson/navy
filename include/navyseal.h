@@ -54,5 +54,6 @@ char **parse_file(char const *filename);
 int read_boat(int fd, char *boat);
 int add_boat(char **board, char *boat);
 vector_t player_attack(char **his_board);
+int check_lose(char **my_board);
 
 #endif /* !NAVYSEAL_H_ */

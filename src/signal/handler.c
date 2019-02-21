@@ -13,9 +13,6 @@ void handler(int sig)
         sigbit = 0;
     if (sig == SIGUSR2)
         sigbit = 1;
-    my_putstr("received ");
-    my_putnbr(sigbit);
-    my_putchar('\n');
 }
 
 void siginit(void)
