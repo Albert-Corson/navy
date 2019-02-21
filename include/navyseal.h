@@ -56,6 +56,6 @@ int add_boat(char **board, char *boat);
 vector_t player_attack(char **his_board);
 int check_lose(char **my_board);
 int gameloop(char **my_board, char**his_board, int his_pid, int turn);
-int check_hit(char **my_board, char **his_board, vector_t target);
+int check_hit(char **my_board, vector_t target);
 
 #endif /* !NAVYSEAL_H_ */

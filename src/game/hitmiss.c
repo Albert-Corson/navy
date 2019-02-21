@@ -26,7 +26,7 @@ int check_lose(char **my_board)
     return (1);
 }
 
-int check_hit(char **my_board, char **his_board, vector_t target)
+int check_hit(char **my_board, vector_t target)
 {
     char impact = my_board[target.y][target.x];
 
