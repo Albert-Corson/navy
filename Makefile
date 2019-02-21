@@ -15,6 +15,7 @@ SRC	=	./src/main.c			\
 		./src/board/parser.c	\
 		./src/board/render.c	\
 		./src/game/hitmiss.c	\
+		./src/game/gameloop.c	\
 		./src/player_attack.c	\
 
 OBJ	=	$(SRC:.c=.o)

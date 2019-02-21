@@ -25,3 +25,18 @@ int check_lose(char **my_board)
     }
     return (1);
 }
+
+int check_hit(char **my_board, char **his_board, vector_t target)
+{
+    char impact = my_board[target.y][target.x];
+
+    if (check_lose(my_board))
+        return (2);
+    if (get_char_pos("2345", impact) >= 0) {
+        my_board[target.y][target.x] = 'x';
+        return (1);
+    } else {
+        my_board[target.y][target.x] = 'o';
+        return (0);
+    }
+}
