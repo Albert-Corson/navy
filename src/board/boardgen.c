@@ -23,7 +23,7 @@ void fill_board(char **board, int side, char c)
 char **init_board(int side)
 {
     char **board = malloc(sizeof(char *) * (side + 1));
-    
+
     RETURN_IF(!board, NULL);
     fill_board(board, side, '.');
     return (board);

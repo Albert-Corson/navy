@@ -30,5 +30,8 @@ long my_put_nbr(signed long long nb);
 char *get_input(void);
 void my_putnbr(int nb);
 void *my_memset(void *s, int c, size_t n);
+unsigned long dectobin(int dec);
+int bintodec(unsigned long bin);
+long long my_pow(int x, int y);
 
 #endif /* !LIB_H_ */

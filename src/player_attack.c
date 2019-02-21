@@ -34,7 +34,7 @@ vector_t player_attack(char **his_board)
     input = get_input();
     while (!check_input(input, his_board)) {
         free(input);
-        my_putstr("wrong position\n");        
+        my_putstr("wrong position\n");
         my_putstr("attack: ");
         input = get_input();
     }
@@ -42,7 +42,7 @@ vector_t player_attack(char **his_board)
         free(input);
         return (attack);
     }
-    attack = VECTOR(input[0] - 65, input[1] - 49); 
+    attack = VECTOR(input[0] - 65, input[1] - 49);
     free(input);
     return (attack);
 }

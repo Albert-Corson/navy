@@ -17,17 +17,34 @@
 
 #define ABS(x) (x < 0 ? -x : x)
 #define RETURN_IF(cond, exit_status)  if (cond) return (exit_status);
-
 #define VECTOR(x, y)    (vector_t){x, y}
+
+int sigbit;
 
 typedef struct vector {
     int x;
     int y;
 } vector_t;
 
+/*
+**  SIGNALS
+*/
 void get_connected(int target);
+void siginit(void);
+void handler(int sig);
+int send_package(int pid, int bits, int dec);
+int send_bit(int pid, int value);
+int receive_package(int bits);
+int receive_bit(void);
+
+/*
+**  ERROR HANDLING
+*/
 int initial_err_check(int argc, const char **argv);
 
+/*
+**  GAME
+*/
 void render_navy(char **my_board, char **enemy_board);
 void render_board(char *title, char **board);
 void fill_board(char **board, int side, char c);

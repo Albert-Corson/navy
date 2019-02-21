@@ -22,7 +22,9 @@ SRC	=	./get_char_pos.c	\
 		./get_line.c		\
 		./get_input.c		\
 		./my_putnbr.c		\
-		./my_memset.c
+		./my_memset.c		\
+		./my_bin.c			\
+		./my_pow.c
 
 OBJ	=	$(SRC:.c=.o)
 

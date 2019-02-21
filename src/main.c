@@ -7,14 +7,6 @@
 
 #include "navyseal.h"
 
-void showbits(unsigned int x)
-{
-    for(int i = (sizeof(int) * 8) - 1; i >= 0; i--) {
-       (x & (1u << i)) ? my_putchar('1') : my_putchar(' ');
-    }
-    my_putchar('\n');
-}
-
 int main(int argc, char const *argv[])
 {
     int rtn = 0;

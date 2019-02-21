@@ -32,7 +32,7 @@ int read_boat(int fd, char *boat)
 {
     int readsize = 0;
     int checks = 0;
-    
+
     my_memset(boat, 0, 8);
     readsize = read(fd, boat, 8);
     RETURN_IF(readsize < 7, 1);

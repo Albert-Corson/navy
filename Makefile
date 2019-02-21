@@ -8,6 +8,9 @@
 SRC	=	./src/main.c			\
 		./src/error.c			\
 		./src/signal/connect.c	\
+		./src/signal/handler.c	\
+		./src/signal/sender.c	\
+		./src/signal/receiver.c	\
 		./src/board/boardgen.c	\
 		./src/board/parser.c	\
 		./src/board/render.c	\
