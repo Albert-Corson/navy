@@ -37,6 +37,7 @@ int send_attack(char **his_board, int his_pid)
 
     send_package(his_pid, 3, target.x);
     send_package(his_pid, 3, target.y);
+    RETURN_IF(target.x == -1, 84);
     RETURN_IF(kill(his_pid, 0) == -1, my_puterror("Enemy disconnected\n"));
     hit = receive_package(2);
     show_turn_result(target, hit);
@@ -55,6 +56,7 @@ int receive_attack(char **my_board, int his_pid)
     my_putstr("waiting for enemy’s attack...\n");
     target.x = receive_package(3);
     target.y = receive_package(3);
+    RETURN_IF(target.x == -1, my_puterror("Enemy disconnected\n"));
     hit = check_hit(my_board, target);
     send_package(his_pid, 2, hit);
     show_turn_result(target, hit);
