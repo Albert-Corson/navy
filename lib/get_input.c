@@ -11,8 +11,9 @@ char *get_input(void)
 {
     int i = 0;
     char tmp = 0;
-    char *rtn = NULL;
+    char *rtn = malloc(sizeof(char));
 
+    rtn[0] = 0;
     i = read(0, &tmp, 1);
     while (i > 0 && tmp != '\n') {
         rtn = my_copycat(rtn, &tmp, 1);
