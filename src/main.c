@@ -20,8 +20,9 @@ int main(int argc, char const *argv[])
     his_board = init_board(8);
     RETURN_IF(!his_board, 84);
     his_pid = init_connection(his_pid);
-    render_navy(my_board, his_board);
-    rtn = gameloop(my_board, his_board, his_pid, argc == 2);
+    if (argc == 3)
+        render_navy(my_board, his_board);
+    rtn = gameloop(my_board, his_board, VECTOR(his_pid, argc == 2), argc == 2);
     destroy_board(my_board, 8);
     return (rtn);
 }

@@ -17,7 +17,7 @@ int init_connection(int his_pid)
         send_package(his_pid, 17, getpid());
         my_putstr("successfully connected\n\n");
     } else {
-        my_putstr("\nwaiting for enemy connection...\n\n");
+        my_putstr("waiting for enemy connection...\n\n");
         his_pid = receive_package(17);
         my_putstr("enemy connected\n\n");
     }
