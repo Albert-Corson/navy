@@ -18,7 +18,7 @@ int check_input(char *input, char **his_board)
         return (1);
     x = input[0] - 65;
     y = input[1] - 49;
-    if (x < 0 || x > 8 || y < 0 || y > 8)
+    if (x < 0 || x > 7 || y < 0 || y > 7)
         return (0);
     if (his_board[y][x] == 'o' || his_board[y][x] == 'x')
         return (0);

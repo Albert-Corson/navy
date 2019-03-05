@@ -55,7 +55,7 @@ int receive_attack(char **my_board, int his_pid)
     vector_t target;
     int hit = 0;
 
-    my_putstr("waiting for enemy’s attack...\n");
+    my_putstr("waiting for enemy's attack...\n");
     target.x = receive_package(4);
     target.y = receive_package(4);
     RETURN_IF(target.x == 9, my_puterror("Connection lost\n"));

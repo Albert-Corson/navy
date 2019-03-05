@@ -28,7 +28,7 @@ void render_board(char *title, char **board)
         my_putchar('|');
         while (col < 8) {
             my_putchar(board[row][col]);
-            my_putchar(' ');
+            my_putchar(col < 7 ? ' ' : 0);
             ++col;
         }
         my_putchar('\n');
