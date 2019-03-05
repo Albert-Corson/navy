@@ -7,39 +7,33 @@
 
 #include "my.h"
 
-unsigned long dectobin(int dec)
+bin_t *dectobin(int dec)
 {
-    unsigned long bin = 0;
+    bin_t *bin = my_calloc(32, sizeof(short));
     int bits = 0;
-    unsigned long order = 0;
+    int order = 0;
 
     while (dec >> bits)
         ++bits;
-    order = my_pow(10, bits - 1);
+    order = 32 - bits;
     while (bits - 1 >= 0) {
-        bin += order * ((dec & (1 << (bits - 1))) > 0);
-        order /= 10;
+        bin[order] = ((dec & (1 << (bits - 1))) > 0);
+        ++order;
         --bits;
     }
     return (bin);
 }
 
-int bintodec(unsigned long bin)
+int bintodec(bin_t *bin)
 {
-    int bits = 0;
-    unsigned long tmp = bin;
     int dec = 0;
-    unsigned long bitsize = 1;
+    int bitsize = 1;
+    int order = 31;
 
-    while (tmp > 0) {
-        tmp /= 10;
-        ++bits;
-    }
-    while (bits > 0) {
-        dec += bitsize * (bin % 10);
-        bin /= 10;
+    while (order > 0) {
+        dec += bitsize * bin[order];
         bitsize *= 2;
-        --bits;
+        --order;
     }
     return (dec);
 }

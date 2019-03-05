@@ -9,16 +9,21 @@
 
 int receive_package(int bits)
 {
-    int index = 0;
-    unsigned long bin = 0;
-    unsigned long order = my_pow(10, bits - 1);
+    bin_t *bin = my_calloc(32, sizeof(short));
+    int order = 0;
+    int dec = 0;
 
-    while (index < bits) {
-        bin += order * receive_bit();
-        order /= 10;
-        ++index;
+    while (dec >> bits)
+        ++bits;
+    order = 32 - bits;
+    while (bits - 1 >= 0) {
+        bin[order] = receive_bit();
+        ++order;
+        --bits;
     }
-    return (bintodec(bin));
+    dec = bintodec(bin);
+    free(bin);
+    return (dec);
 }
 
 int receive_bit(void)

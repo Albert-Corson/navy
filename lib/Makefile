@@ -8,6 +8,7 @@
 SRC	=	./get_char_pos.c	\
 		./my_copycat.c		\
 		./my_memcmp.c		\
+		./my_calloc.c		\
 		./my_putchar.c		\
 		./my_putstr.c		\
 		./my_strcpy.c		\

@@ -11,6 +11,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+typedef short bin_t;
+
 int my_puterror(char const *str);
 char *my_copycat(char *dest, char *src, int lim);
 int get_char_pos(char const *str, char goal);
@@ -30,8 +32,9 @@ long my_put_nbr(signed long long nb);
 char *get_input(void);
 void my_putnbr(int nb);
 void *my_memset(void *s, int c, size_t n);
-unsigned long dectobin(int dec);
-int bintodec(unsigned long bin);
+void *my_calloc(size_t nmemb, size_t size);
+bin_t *dectobin(int dec);
+int bintodec(bin_t *bin);
 long long my_pow(int x, int y);
 
 #endif /* !LIB_H_ */

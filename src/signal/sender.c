@@ -9,11 +9,13 @@
 
 int send_package(int pid, int bits, int dec)
 {
+    bin_t *bin = dectobin(dec);
     while (bits - 1 >= 0) {
         usleep(3000);
-        send_bit(pid, ((dec & (1 << (bits - 1))) > 0));
+        send_bit(pid, bin[32 - bits]);
         --bits;
     }
+    free(bin);
     return (dec);
 }
 
